@@ -24,7 +24,7 @@ window.addEventListener('load', start, false);
 		canvas.addEventListener('mousemove', drag, false);
 		canvas.addEventListener('mouseup', dragStop, false);
 		canvas.addEventListener('dblclick', deleteCircle,false);
-        canvas.addEventListener('click', displayMsg, false);
+        // canvas.addEventListener('click', displayMsg, false);
 	}	
 
     function getImage() {
@@ -111,26 +111,26 @@ window.addEventListener('load', start, false);
 		return (dx*dx + dy*dy < shape.rad*shape.rad);
 	}
 
-    function displayMsg(event) 
-{
-		var i;
-		var c=-1;
-        let bRect = canvas.getBoundingClientRect();
-		mouseX = (event.clientX - bRect.left)*(canvas.width/bRect.width);
-		mouseY = (event.clientY - bRect.top)*(canvas.height/bRect.height);
-		//To find that which circle has been clicked
-		for (i=0; i < circleCount; i++) {
-			if	(isCircleClicked(circles[i], mouseX, mouseY)) {
-				c = i;		
-			}
-		}
-		if ( c > -1 ){
-			alert('Hit');
-			circleCount=circleCount-1;
-		} 
+//     function displayMsg(event) 
+// {
+// 		var i;
+// 		var c=-1;
+//         let bRect = canvas.getBoundingClientRect();
+// 		mouseX = (event.clientX - bRect.left)*(canvas.width/bRect.width);
+// 		mouseY = (event.clientY - bRect.top)*(canvas.height/bRect.height);
+// 		//To find that which circle has been clicked
+// 		for (i=0; i < circleCount; i++) {
+// 			if	(isCircleClicked(circles[i], mouseX, mouseY)) {
+// 				c = i;		
+// 			}
+// 		}
+// 		if ( c > -1 ){
+// 			alert('Hit');
+// 			circleCount=circleCount-1;
+// 		} 
 						
-	else{alert('Miss');}
-    }
+// 	else{alert('Miss');}
+//     }
     
 
     
